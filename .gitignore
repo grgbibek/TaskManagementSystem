@@ -4,6 +4,7 @@
 
 /.vs
 /obj
+
 /WebUI/bin/Debug/net6.0
 /WebUI/obj
 /UnitTests/bin/Debug/net6.0

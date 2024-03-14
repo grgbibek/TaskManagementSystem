@@ -1,0 +1,34 @@
+
+
+<div class="d-flex">
+    <div class="mr-auto p-2"><h2>Task List</h2></div>
+    <div class="p-2"><a routerLink="/tasks/add" class="btn btn-success mt-3">Add Task</a></div>
+  </div>
+
+  
+  
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">Priority</th>
+        <th scope="col">Due Date</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of tasks">
+        <th scope="row">{{task.id}}</th>
+        <td>{{ task.title }}</td>
+        <td>{{ task.description }}</td>
+        <td class="badge bg-primary">{{ task.priority }}</td>
+        <td>{{ task.dueDate | date:'dd/MM/yyyy'}}</td>
+        <td><a [routerLink]="['/tasks/edit', task.id]" class="btn btn-sm btn-info mx-1">Edit</a>
+            <button class="btn btn-sm btn-danger" (click)="deleteTask(task.id)">Delete</button></td>
+      </tr>
+      <tr>
+    </tbody>
+  </table>
+  
